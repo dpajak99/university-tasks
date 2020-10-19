@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/shadow_rounded" />
+
+    <item
+        android:bottom="6px"
+        android:drawable="@drawable/background_rounded_red" />
+</layer-list>

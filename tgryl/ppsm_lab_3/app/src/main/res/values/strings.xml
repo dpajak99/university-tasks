@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">ppsm_lab_3</string>
+    <string name="app_name">Suchar</string>
+
+    <string name="button_generate_joke">Generuj</string>
+
+    <string-array name="array_of_jokes">
+        <item>W jakim stanie USA nie pije się alkoholu? \n\n W STANIE TRZEŹWYM</item>
+        <item>Jedzie blondynka samochodem, podchodzi policja i mówi "poproszę dowody"\n\n ALE JA NIE UMIEM PŁYWAĆ</item>
+        <item>Jak informatyk chroni się przed koronawiruem? \n\n ANTYWIRUSEM</item>
+        <item>Jak się wita mleko? \n\n MLEKOVITA</item>
+        <item>Dlaczego indianom jest zimno? \n\n BO KOLUMB ICH ODKRYŁ</item>
+    </string-array>
 </resources>

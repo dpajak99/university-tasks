@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Not funy app</string>
+
+    <string name="button_generate_joke">Generate</string>
+
+    <string-array name="array_of_jokes">
+        <item>Why was 6 afraid of 7? \n\n BECAUSE 7 8 9</item>
+        <item>What is between sex and fear? \n\n FüNF</item>
+        <item>What kind of ears does an engine have? \n\n\n\ENGINEERS</item>
+        <item>Arent you wearing your wedding ring on the wrong finger? \n\n Yes I am, I married the wrong woman.</item>
+        <item>What two words have got thousands of letters in them? \n\n POST OFFICE</item>
+    </string-array>
+</resources>
