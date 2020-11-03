@@ -15,21 +15,6 @@ public class StringUtils {
     return sb.toString();
   }
 
-  public static String removeCharByIndex( String stringToRemove, int index ) {
-    StringBuilder tmp = new StringBuilder();
-    int sizeOfString = stringToRemove.length();
-    if( index <  sizeOfString - 1 ) {
-      for( int i = index + 1; i < sizeOfString; i++) {
-        tmp.append(stringToRemove.charAt(i));
-      }
-    }
-    stringToRemove = stringToRemove.substring(0, stringToRemove.length()-index);
-    if( tmp.length() != 0) {
-      stringToRemove = StringUtils.join(stringToRemove, tmp);
-    }
-    return stringToRemove;
-  }
-
   public static String removeLastChar( String stringToRemove ) {
     return stringToRemove.substring(0, stringToRemove.length()-1);
   }

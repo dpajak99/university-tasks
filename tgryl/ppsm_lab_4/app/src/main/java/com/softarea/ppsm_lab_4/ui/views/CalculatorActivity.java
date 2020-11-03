@@ -2,6 +2,7 @@ package com.softarea.ppsm_lab_4.ui.views;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.GridLayout;
 import android.widget.GridView;
@@ -20,6 +21,11 @@ import com.softarea.ppsm_lab_4.ui.adapters.PreviousOperationAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import de.congrace.exp4j.Calculable;
+import de.congrace.exp4j.ExpressionBuilder;
+import de.congrace.exp4j.UnknownFunctionException;
+import de.congrace.exp4j.UnparsableExpressionException;
 
 public class CalculatorActivity extends Activity {
   private RecyclerView recyclerCalculatorPanel;
