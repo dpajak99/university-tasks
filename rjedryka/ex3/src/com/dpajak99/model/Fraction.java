@@ -1,27 +1,30 @@
 package com.dpajak99.model;
 
 public class Fraction {
-    private double numeral;
-    private double nominative;
+    private int numeral;
+    private int nominative;
 
-    public Fraction(double numeral, double nominative) {
+    public Fraction(int numeral, int nominative) {
         this.numeral = numeral;
         this.nominative = nominative;
     }
 
-    public double getNumeral() {
+    public int getNumeral() {
         return numeral;
     }
 
-    public double getNominative() {
+    public int getNominative() {
         return nominative;
     }
 
-    public void setNumeral(double numeral) {
-        this.numeral = numeral;
+    public void setEqualNominative(Fraction template ) {
+        if( this.nominative == template.getNominative()) return;
+        this.nominative *= template.getNominative();
+        this.numeral *= template.getNominative();
     }
 
-    public void setNominative(double nominative) {
-        this.nominative = nominative;
+    @Override
+    public String toString() {
+        return numeral + " / " + nominative;
     }
 }

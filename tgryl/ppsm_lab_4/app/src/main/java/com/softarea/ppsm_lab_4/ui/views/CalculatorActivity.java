@@ -22,10 +22,6 @@ import com.softarea.ppsm_lab_4.ui.adapters.PreviousOperationAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-import de.congrace.exp4j.Calculable;
-import de.congrace.exp4j.ExpressionBuilder;
-import de.congrace.exp4j.UnknownFunctionException;
-import de.congrace.exp4j.UnparsableExpressionException;
 
 public class CalculatorActivity extends Activity {
   private RecyclerView recyclerCalculatorPanel;
