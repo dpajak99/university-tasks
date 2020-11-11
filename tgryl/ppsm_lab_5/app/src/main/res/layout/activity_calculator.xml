@@ -16,7 +16,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/list_previous_operations"
             android:layout_width="match_parent"
-            android:layout_height="160dp" />
+            android:layout_height="50dp" />
 
         <TextView
             android:id="@+id/tv_notepad"

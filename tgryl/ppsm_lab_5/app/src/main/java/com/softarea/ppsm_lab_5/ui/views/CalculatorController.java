@@ -1,5 +1,7 @@
 package com.softarea.ppsm_lab_5.ui.views;
 
+import android.util.Log;
+
 import com.softarea.ppsm_lab_5.data.model.CalculatorItemInt;
 import com.softarea.ppsm_lab_5.data.model.CalculatorItemSumOperation;
 import com.softarea.ppsm_lab_5.data.model.CalculatorPanelItem;
@@ -35,8 +37,8 @@ public class CalculatorController {
     }
     activity.update(result);
     char lastChar = 0;
-    if(mathText.length() != 0) {
-      lastChar = mathText.charAt(mathText.length() - 1);
+    if(result.length() != 0) {
+      lastChar = result.charAt(result.length() - 1);
     }
     if( !(panelItem instanceof CalculatorItemInt) && lastChar != 0 && MathUtils.isInt(lastChar)) {
       previousOperation = new CalculatorItemInt(String.valueOf(lastChar));
