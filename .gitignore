@@ -7,3 +7,6 @@ build/
 captures/
 *.externalNativeBuild
 *.cxx
+test/
+androidTest/
+out/
