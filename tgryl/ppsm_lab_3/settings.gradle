@@ -1,2 +1,0 @@
-include ':app'
-rootProject.name = "ppsm_lab_3"
