@@ -1,2 +1,2 @@
 # PWSZ
-School projects
+School projects:
