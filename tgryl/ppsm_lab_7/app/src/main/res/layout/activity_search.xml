@@ -4,34 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ui.main.view.HomeFragment">
+    android:orientation="vertical">
 
-    <LinearLayout
+    <EditText
+        android:id="@+id/edittext_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"
-        android:background="@drawable/background_gradient"
-        android:orientation="vertical">
+        android:autofillHints=""
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="10dp"
+        android:drawableEnd="@drawable/ic_baseline_search_24"
+        android:hint="@string/search_city"
+        android:inputType="text" />
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_activity_search"
-            android:layout_width="match_parent"
-            app:titleTextColor="@color/white"
-            android:layout_height="wrap_content"/>
-
-        <EditText
-            android:id="@+id/search_view"
-            android:layout_width="match_parent"
-            android:background="#55FFFFFF"
-            android:padding="8dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:text="@string/latest_searchs"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_bus_stops"
+        android:id="@+id/rv_city_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:nestedScrollingEnabled="false"

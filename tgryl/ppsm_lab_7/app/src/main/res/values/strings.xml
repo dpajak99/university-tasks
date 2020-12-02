@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ppsm_lab_7</string>
+    <string name="search_city">Search city</string>
+    <string name="logo">logo</string>
+    <string name="check_the_weather">Check the weather</string>
+    <string name="weather_app">Weather App</string>
+    <string name="status">status</string>
+    <string name="city">City</string>
+    <string name="temp">Temp</string>
+    <string name="pressure">Pressure</string>
+    <string name="humidity">Humidity</string>
+    <string name="temp_min">Temp min</string>
+    <string name="temp_max">Temp max</string>
+    <string name="change_city">Change City</string>
+    <string name="latest_searchs">Latest searchs:</string>
+</resources>
