@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"m":"pl.pwsztar","l":"pl.pwsztar"},{"m":"pl.pwsztar","l":"pl.pwsztar.model"},{"m":"pl.pwsztar","l":"pl.pwsztar.services"},{"m":"pl.pwsztar","l":"pl.pwsztar.services.models"},{"m":"pl.pwsztar","l":"pl.pwsztar.utils"},{"m":"pl.pwsztar","l":"pl.pwsztar.utils.validators"}]

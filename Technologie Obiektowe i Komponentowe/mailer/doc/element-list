@@ -1,0 +1,7 @@
+module:pl.pwsztar
+pl.pwsztar
+pl.pwsztar.model
+pl.pwsztar.services
+pl.pwsztar.services.models
+pl.pwsztar.utils
+pl.pwsztar.utils.validators

@@ -1,0 +1,196 @@
+# depslib dependency file v1.0
+1621357989 source:c:\c-language-projects\cmaes\main.cpp
+	"newmat/newmat.h"
+	"newmat/newmatio.h"
+	"newmat/newmatap.h"
+	<iostream>
+	<random>
+
+1621357832 c:\c-language-projects\cmaes\newmat\newmat.h
+	"include.h"
+	"boolean.h"
+	"myexcept.h"
+
+1621357986 c:\c-language-projects\cmaes\newmat\include.h
+	<cstdlib>
+	<limits>
+	<iostream>
+	<iomanip>
+	<cmath>
+	<cstring>
+	<ctime>
+	<fstream>
+	<stdlib.h>
+	<iostream.h>
+	<iomanip.h>
+	<math.h>
+	<float.h>
+	<string.h>
+	<time.h>
+	<fstream.h>
+	<stdlib.h>
+	<iostream.hpp>
+	<iomanip.hpp>
+	<math.h>
+	<float.h>
+	<string.h>
+	<time.h>
+	<fstream.h>
+	<stdlib.h>
+	<iostream.h>
+	<iomanip.h>
+	<math.h>
+	<float.h>
+	<string.h>
+	<time.h>
+	<fstream.h>
+	<stdlib.h>
+	<iostream.h>
+	<iomanip.h>
+	<math.h>
+	<float.h>
+	<string.h>
+	<time.h>
+	<fstream.h>
+	<stdlib.h>
+	<iostream.h>
+	<iomanip.h>
+	<math.h>
+	<float.h>
+	<string.h>
+	<time.h>
+	<fstream.h>
+	<stdlib.h>
+	<iostream.h>
+	<iomanip.h>
+	<float.h>
+	<math.h>
+	<string.h>
+	<time.h>
+	<fstream.h>
+	<stdlib.h>
+	<iostream.h>
+	<iomanip.h>
+	<float.h>
+	<math.h>
+	<string.h>
+	<time.h>
+	<fstream.h>
+	<stdlib.h>
+	<iostream.h>
+	<iomanip.h>
+	<math.h>
+	<values.h>
+	<string.h>
+	<time.h>
+	<fstream.h>
+
+1621357832 c:\c-language-projects\cmaes\newmat\myexcept.h
+	"include.h"
+	<setjmp.h>
+
+1621357863 c:\c-language-projects\cmaes\newmat\newmatio.h
+	"newmat.h"
+	<ostream>
+
+1621357832 c:\c-language-projects\cmaes\newmat\newmatap.h
+	"newmat.h"
+
+1621357829 c:\c-language-projects\cmaes\newmat\boolean.h
+
+1621365630 source:/media/dominik/dane/github/PWSZ/Algorytmy i metody optymalizacji/CMA-ES/main.cpp
+	"newmat/newmat.h"
+	"newmat/newmatio.h"
+	"newmat/newmatap.h"
+	<iostream>
+	<random>
+
+1621365630 /media/dominik/dane/github/PWSZ/Algorytmy i metody optymalizacji/CMA-ES/newmat/newmat.h
+	"include.h"
+	"myexcept.h"
+
+1621365630 /media/dominik/dane/github/PWSZ/Algorytmy i metody optymalizacji/CMA-ES/newmat/include.h
+	<cstdlib>
+	<limits>
+	<iostream>
+	<iomanip>
+	<cmath>
+	<cstring>
+	<ctime>
+	<fstream>
+	<stdlib.h>
+	<iostream.h>
+	<iomanip.h>
+	<math.h>
+	<float.h>
+	<string.h>
+	<time.h>
+	<fstream.h>
+	<stdlib.h>
+	<iostream.hpp>
+	<iomanip.hpp>
+	<math.h>
+	<float.h>
+	<string.h>
+	<time.h>
+	<fstream.h>
+	<stdlib.h>
+	<iostream.h>
+	<iomanip.h>
+	<math.h>
+	<float.h>
+	<string.h>
+	<time.h>
+	<fstream.h>
+	<stdlib.h>
+	<iostream.h>
+	<iomanip.h>
+	<math.h>
+	<float.h>
+	<string.h>
+	<time.h>
+	<fstream.h>
+	<stdlib.h>
+	<iostream.h>
+	<iomanip.h>
+	<math.h>
+	<float.h>
+	<string.h>
+	<time.h>
+	<fstream.h>
+	<stdlib.h>
+	<iostream.h>
+	<iomanip.h>
+	<float.h>
+	<math.h>
+	<string.h>
+	<time.h>
+	<fstream.h>
+	<stdlib.h>
+	<iostream.h>
+	<iomanip.h>
+	<float.h>
+	<math.h>
+	<string.h>
+	<time.h>
+	<fstream.h>
+	<stdlib.h>
+	<iostream.h>
+	<iomanip.h>
+	<math.h>
+	<values.h>
+	<string.h>
+	<time.h>
+	<fstream.h>
+
+1621365630 /media/dominik/dane/github/PWSZ/Algorytmy i metody optymalizacji/CMA-ES/newmat/myexcept.h
+	"include.h"
+	<setjmp.h>
+
+1621365630 /media/dominik/dane/github/PWSZ/Algorytmy i metody optymalizacji/CMA-ES/newmat/newmatio.h
+	"newmat.h"
+	<ostream>
+
+1621365630 /media/dominik/dane/github/PWSZ/Algorytmy i metody optymalizacji/CMA-ES/newmat/newmatap.h
+	"newmat.h"
+

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.HTMLEditor?>
+<VBox xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="pl.pwsztar.EmailViewController">
+    <MenuBar fx:id="menuBar">
+        <menus>
+            <Menu text="File">
+                <items>
+                    <MenuItem text="Export recipients" disable="true"/>
+                    <SeparatorMenuItem  />
+                    <MenuItem text="Exit" onAction="#onExit"/>
+                </items>
+            </Menu>
+            <Menu text="Settings">
+                <items>
+                    <MenuItem text="Default email settings" disable="true"/>
+                    <MenuItem text="Global settings" disable="true"/>
+                    <MenuItem text="Language" disable="true"/>
+                </items>
+            </Menu>
+            <Menu text="Help">
+                <items>
+                    <MenuItem text="Search" disable="true"/>
+                    <SeparatorMenuItem />
+                    <MenuItem text="About" disable="true" />
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
+    <GridPane>
+        <GridPane GridPane.columnIndex="0" GridPane.rowIndex="0" prefWidth="700" style="-fx-padding: 20;">
+            <Label text="Lista kontaktów:"
+                   style="-fx-padding: 0 0 10 0;"
+                   GridPane.columnSpan="2"
+                   GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TableView fx:id="tableView" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="1"
+                       prefWidth="1000"/>
+
+            <Label text="Dodaj nowego odbiorcę:"
+                   style="-fx-padding: 20 0 10 0;"
+                   GridPane.columnSpan="2"
+                   GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <TextField
+                    fx:id="newEmail"
+                    GridPane.columnIndex="0" GridPane.rowIndex="3" prefWidth="400"/>
+            <Button fx:id="addNewEmail" text="Dodaj" onAction="#addNewEmail"
+                    GridPane.columnIndex="1" GridPane.rowIndex="3" prefWidth="300"/>
+        </GridPane>
+        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="1000" style="-fx-padding: 20;">
+            <Label text="Tytuł wiadomości:"
+                   style="-fx-padding: 0 0 10 0;"
+                   GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField
+                    fx:id="emailTitle"
+                    GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <Label text="Treść wiadomości:"
+                   style="-fx-padding: 20 0 10 0;"
+                   GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <HTMLEditor
+                    fx:id="emailEditor"
+                    GridPane.columnIndex="0" GridPane.rowIndex="3" prefHeight="300"/>
+            <Button fx:id="primaryButton" text="Wyślij" onAction="#sendMessage"
+                    GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+        </GridPane>
+    </GridPane>
+</VBox>
