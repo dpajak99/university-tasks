@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerZone : MonoBehaviour
+public class Inventory : MonoBehaviour
 {
+    public static int charge = 0;
+    public AudioClip collectSound;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        charge = 0;
     }
 
     // Update is called once per frame
@@ -16,11 +19,8 @@ public class TriggerZone : MonoBehaviour
         
     }
     
-    void OnTriggerEnter(Collider col){
-        if(col.gameObject.tag == "Player"){
-	    if(Inventory.charge == 4){
-		transform.FindChild("door").SendMessage("DoorCheck");
-	    }
-	}
+    void CellPickup(){
+	AudioSource.PlayClipAtPoint(collectSound, transform.position);
+	charge++;
     }
 }
