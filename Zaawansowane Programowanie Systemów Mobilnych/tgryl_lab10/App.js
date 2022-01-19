@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createDrawerNavigator, DrawerItemList} from '@react-navigation/drawer';
@@ -88,9 +88,13 @@ export default function App () {
     const [isConnectedToNetwork, setIsConnectedToNetwork] = useState(false);
 
 
-    const setUpInitial = () => {
-        loadResourcesAsync().then();
-        fetchAllDatabase().then();
+    useEffect(async () => {
+        await setUpInitial();
+    }, []);
+
+    const setUpInitial = async () => {
+        await loadResourcesAsync();
+        await fetchAllDatabase();
         const unsubscribe = NetInfo.addEventListener(state => {
             if( state.isConnected !== isConnectedToNetwork ) {
                 setIsConnectedToNetwork(state.isConnected);
@@ -114,12 +118,14 @@ export default function App () {
         setLoadingComplete(true);
     }
 
-    setUpInitial();
-
     const getInitialPage = async () => {
         const showTerms = await AsyncStorage.getItem('terms');
         if (showTerms) return 'Terms';
         return 'Home';
+    }
+
+    if( !isLoadingComplete ) {
+        return <Text>Loading</Text>
     }
 
     return (

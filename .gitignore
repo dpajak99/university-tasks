@@ -12,3 +12,4 @@ captures/
 test/
 androidTest/
 out/
+.Rproj.user
