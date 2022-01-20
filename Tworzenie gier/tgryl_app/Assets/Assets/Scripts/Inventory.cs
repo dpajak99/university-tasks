@@ -13,6 +13,11 @@ public class Inventory : MonoBehaviour
     // Generator
     public Texture2D[] meterCharge;
     public Renderer meter;
+    // Zapałki
+    bool haveMatches = false;
+    public RawImage matchHudGUI ;
+    public Text textHints;
+    bool fireIsLit = false;
     
     // Start is called before the first frame update
     void Start()
@@ -34,9 +39,37 @@ public class Inventory : MonoBehaviour
 	meter.material.mainTexture = meterCharge[charge];
     }
     
+    void MatchPickup(){
+	haveMatches = true;
+	AudioSource.PlayClipAtPoint(collectSound, transform.position);
+	matchHudGUI.enabled = true;
+    }
+    
     void HUDon(){
 	if(!chargeHudGUI.enabled){
 	     chargeHudGUI.enabled = true;
 	}
+    }
+    
+    void OnControllerColliderHit(ControllerColliderHit col){
+	if (col.gameObject.name == "campfire"){
+	    if (haveMatches){
+		LightFire(col.gameObject);
+	    } else if( !fireIsLit){
+		textHints.SendMessage("ShowHint", "Mógłbym rozpalić ognisko do wezwania pomocy. \n		Tylko czym...");
+            }
+	}
+    }
+    
+    void LightFire(GameObject campfire){
+        ParticleSystem[] fireEmitters;
+        fireEmitters = campfire.GetComponentsInChildren<ParticleSystem>();
+        foreach(ParticleSystem emitter in fireEmitters){
+	    emitter.Play();
+        }
+        campfire.GetComponent<AudioSource>().Play();
+        matchHudGUI.enabled=false;
+	haveMatches=false;
+	fireIsLit=true;
     }
 }
