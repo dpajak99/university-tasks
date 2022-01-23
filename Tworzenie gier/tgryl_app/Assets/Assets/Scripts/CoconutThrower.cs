@@ -19,7 +19,7 @@ public class CoconutThrower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire1") && canThrow){
+        if(Input.GetButtonDown("Fire1")){
 	    GetComponent<AudioSource>().PlayOneShot(throwSound);
 	    Rigidbody newCoconut = Instantiate(coconutPrefab, transform.position, transform.rotation) as Rigidbody;
 	    newCoconut.name = "coconut";
