@@ -68,7 +68,7 @@ public class MainMenuGUI : MonoBehaviour
         if(menuPage == "main") {
             if(GUI.Button(playBtnRect, "Play")) {
                 Debug.Log("Naciśnięto Play");
-                StartCoroutine("ButtonAction", "SampleScene");
+                StartCoroutine("ButtonAction", "Island");
             }
             if(GUI.Button(instructionsBtnRect, "Instructions")) {
                 Debug.Log("Naciśnięto Instructions");
