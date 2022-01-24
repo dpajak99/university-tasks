@@ -32,7 +32,7 @@
  *
  * Possible Issues:
  *
- * Input must avoid conditional compilation blocks (this pl.pwsztar.grammar ignores any preprocessor directive)
+ * Input must avoid conditional compilation blocks (this pl.pwsztar.antlrllvm.grammar ignores any preprocessor directive)
  * GCC extensions not yet supported (do not try to parse the preprocessor output)
  * Right angle bracket (C++11) - Solution '>>' and '>>=' are not tokens, only '>'
  * Lexer issue with pure-specifier rule ('0' token) - Solution in embedded code
