@@ -1,0 +1,84 @@
+body, html {
+   height: 100%;
+   margin: 0;
+}
+
+.background {
+   background-image: url("./img/bg.jpg");
+   height: 100%;
+
+   background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+.text {
+   height: 50vh;
+   background-color: #e8dbdb;
+   font-size: 36px;
+   padding: 15px;
+}
+
+
+nav {
+   position: fixed;
+   background-color: #fff;
+   width: 100%;
+   box-shadow: 10px 5px 5px black;
+}
+
+
+nav ul li {
+   list-style-type: none;
+   display: inline;
+   margin-right: 15px;
+}
+
+nav ul li a {
+   text-decoration: none;
+   color: #0d0fbf;
+   transition: 0.5s;
+}
+
+nav ul li a:hover {
+   text-decoration: underline;
+   color: #000;
+}
+
+footer {
+   text-align: center;
+}
+
+.other {
+   background-color: #6c92e5;
+   padding: 15px;
+}
+
+.kontakt {
+   padding: 15px;
+}
+
+.logo-wrapper {
+   display:flex;
+   justify-content: center;
+   position: relative;
+   height: 200px;
+}
+
+.logo_katedra {
+   background: url("./img/ki.jpg");
+   background-size: cover;
+   width: 200px;
+   height: 200px;
+   /*position: absolute;*/
+   left: -150px;
+}
+
+.logo-pwsz {
+   background: url("./img/pwsz.jpg");
+   background-size: cover;
+   width: 200px;
+   height: 200px;
+   /*position: absolute;*/
+}

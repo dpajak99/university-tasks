@@ -1,0 +1,1 @@
+Aplikacja wydrukowała w konsoli komunikat 'new connection' za pomocą mechanizmu websocket
