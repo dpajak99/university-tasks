@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Blog</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/']">Home</a>
+        </li>
+        <li *ngIf="authService.isLoggedIn()" class="nav-item">
+          <a class="nav-link" href="#" [routerLink]="['/blog']">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" [routerLink]="['/blog/post/create']">Add post</a>
+        </li>
+      </ul>
+      <div class="d-flex">
+        <div class="d-flex" *ngIf="!authService.isLoggedIn()">
+          <a class="nav-link" href="#" [routerLink]="['/login']">Login</a>
+          <a class="nav-link" href="#" [routerLink]="['/signup']">SignUp</a>
+        </div>
+        <button *ngIf="authService.isLoggedIn()" class="btn nav-link" (click)="signOut()">Wyloguj</button>
+      </div>
+    </div>
+  </div>
+</nav>
+

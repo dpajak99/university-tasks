@@ -1,0 +1,17 @@
+<div class="container">
+  <form action="post" autocomplete="off" method="POST">
+    <div class="input-group">
+      <input [(ngModel)]="credentials.login" type="text" class="form-control"
+             name="username" placeholder="Nazwa" title="Login">
+    </div>
+
+    <div class="input-group">
+      <input [(ngModel)]="credentials.password" type="password" class="form-control"
+             name="password" placeholder="Hasło" title="Password">
+    </div>
+
+    <button (click)="signIn()" class="btn btn-primary" type="submit" title="Przycisk zaloguj">
+      Sign in
+    </button>
+  </form>
+</div>

@@ -1,0 +1,43 @@
+<section class="signup container">
+  <h1 class="entry-title"><span>Create Post</span></h1>
+  <hr>
+  <form class="form-horizontal" method="post" name="create-post" id="create-post">
+    <div class="form-group">
+      <label class="control-label col-sm-3">Title<span class="text-danger">*</span></label>
+      <div class="col-md-8 col-sm-9">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+          <input type="text" class="form-control" name="title" id="title" placeholder="Type title"
+                 value="" [(ngModel)]="post.title">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-3">Description<span class="text-danger">*</span></label>
+      <div class="col-md-8 col-sm-9">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+          <input type="text" class="form-control" name="description" id="description" placeholder="Type description"
+                 value="" [(ngModel)]="post.text">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-3">Image url<span class="text-danger">*</span></label>
+      <div class="col-md-8 col-sm-9">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+          <input type="text" class="form-control" name="image" id="image" placeholder="Type image url"
+                 value="" [(ngModel)]="post.image">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-xs-offset-3 col-xs-10">
+        <button (click)="create()" name="Submit" type="submit" class="btn btn-primary">Create post
+        </button>
+      </div>
+    </div>
+  </form>
+</section>
