@@ -6,24 +6,24 @@ import 'package:projekt/shared/api_manager.dart';
 import 'package:projekt/shared/models/account.dart';
 
 class ProfileAvatar extends StatelessWidget {
+  final String? avatarId;
   final double size;
 
   const ProfileAvatar({
+    required this.avatarId,
     this.size = 30,
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    Account? account = globalLocator<AccountProvider>().account;
-
     return SizedBox(
       width: size,
       height: size,
       child: CircleAvatar(
         radius: size / 2,
         backgroundImage:
-            account?.avatarId != null ? NetworkImage('${ApiManager.networkUrl}/drive/files/${account!.avatarId}') : null,
+        avatarId != null ? NetworkImage('${ApiManager.networkUrl}/drive/uploads/$avatarId') : null,
       ),
     );
   }

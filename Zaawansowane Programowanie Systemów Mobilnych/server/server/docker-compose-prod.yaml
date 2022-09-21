@@ -1,0 +1,15 @@
+version: '3.1'
+services:
+  hacknarok-server:
+    restart: always
+    build:
+      context: .
+      dockerfile: .app-config/prod/Dockerfile
+    container_name: hacknarok-server
+    volumes:
+      - /home/projects/hacknarok-api.verybadcode.com/static:/opt/static
+    networks:
+      - dev-network
+networks:
+  dev-network:
+    external: true

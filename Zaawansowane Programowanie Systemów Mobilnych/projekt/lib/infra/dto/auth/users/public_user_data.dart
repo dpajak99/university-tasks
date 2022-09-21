@@ -2,6 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:projekt/infra/dto/auth/login/response/role.dart';
+import 'package:projekt/infra/dto/response/FileResponse.dart';
 import 'package:projekt/shared/api_manager.dart';
 import 'package:projekt/shared/models/account.dart';
 
@@ -14,7 +15,7 @@ class PublicUserData extends Equatable {
   final String firstName;
   final String lastName;
   final String email;
-  final String? avatarId;
+  final FileResponse? avatar;
   final List<Role> roles;
 
   const PublicUserData({
@@ -23,7 +24,7 @@ class PublicUserData extends Equatable {
     required this.email,
     required this.roles,
     required this.id,
-    this.avatarId,
+    this.avatar,
   });
 
   factory PublicUserData.fromAccount(Account account) {
@@ -33,13 +34,13 @@ class PublicUserData extends Equatable {
       lastName: account.lastName,
       email: account.email,
       roles: account.roles,
-      avatarId: account.avatarId,
+      avatar: account.avatar,
     );
   }
 
-  String? getAvatarUrl() {
-    if( avatarId == null ) return null;
-    return '${ApiManager.networkUrl}/drive/files/$avatarId';
+  String getAvatarUrl([double? size]) {
+    if( avatar == null ) return 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png';
+    return '${ApiManager.networkUrl}/drive/uploads/${avatar!.id}${size != null ? '?height=${size.toInt()}' : ''}';
   }
 
   factory PublicUserData.fromJson(Map<String, dynamic> json) {
@@ -58,7 +59,7 @@ class PublicUserData extends Equatable {
     String? firstName,
     String? lastName,
     String? email,
-    String? avatarId,
+    FileResponse? avatar,
     List<Role>? roles,
   }) {
     return PublicUserData(
@@ -66,7 +67,7 @@ class PublicUserData extends Equatable {
       firstName: firstName ?? this.firstName,
       lastName: lastName ?? this.lastName,
       email: email ?? this.email,
-      avatarId: avatarId ?? this.avatarId,
+      avatar: avatar ?? this.avatar,
       roles: roles ?? this.roles,
     );
   }
@@ -74,7 +75,7 @@ class PublicUserData extends Equatable {
 
   @override
   String toString() {
-    return 'PublicUserData{id: $id, firstName: $firstName, lastName: $lastName, email: $email, avatarId: $avatarId, roles: $roles}';
+    return 'PublicUserData{id: $id, firstName: $firstName, lastName: $lastName, email: $email, avatar: $avatar, roles: $roles}';
   }
 
   @override

@@ -75,8 +75,8 @@ class _SearchPageState extends State<SearchPage> {
           title: Text('${user.firstName} ${user.lastName}'),
           subtitle: Text(user.email),
           leading: CircleAvatar(
-            backgroundImage: user.avatarId != null
-                ? NetworkImage('${ApiManager.networkUrl}/drive/files/${user.avatarId}')
+            backgroundImage: user.avatar?.id != null
+                ? NetworkImage('${ApiManager.networkUrl}/drive/uploads/${user.avatar!.id}')
                 : null,
           ),
         );

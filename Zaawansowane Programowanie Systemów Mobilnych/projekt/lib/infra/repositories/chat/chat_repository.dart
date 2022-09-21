@@ -7,6 +7,7 @@ abstract class ChatRepository {
   Future<Map<String, dynamic>> fetchMessage({required String messageId});
 
   Future<List<dynamic>> fetchUserRooms();
+  Future<List<dynamic>> fetchCountMessages();
 
   Future<Map<String, dynamic>> fetchRoomDetails({required String roomId});
 
@@ -58,6 +59,14 @@ class RemoteChatRepository extends ChatRepository {
       body: <String, dynamic>{
         'users': usersId,
       },
+    );
+    return response.data!;
+  }
+
+  @override
+  Future<List> fetchCountMessages() async {
+    final Response<List<dynamic>> response = await api.get(
+      path: '/chat/messages/count',
     );
     return response.data!;
   }

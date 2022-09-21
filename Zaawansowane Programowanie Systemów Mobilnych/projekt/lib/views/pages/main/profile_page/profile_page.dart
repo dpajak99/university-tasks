@@ -27,7 +27,7 @@ class _ProfilePage extends State<ProfilePage> {
 
   @override
   Widget build(BuildContext context) {
-    Account? account = globalLocator<AccountProvider>().account;
+    Account account = globalLocator<AccountProvider>().account!;
     return PrettyScrollView(
       title: 'Profile',
       actions: const [],
@@ -35,10 +35,10 @@ class _ProfilePage extends State<ProfilePage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           const SizedBox(height: 16),
-          const ProfileAvatar(size: 100),
+          ProfileAvatar(size: 100, avatarId: account.avatar?.id,),
           const SizedBox(height: 16),
           Text(
-            '${account?.firstName} ${account?.lastName}',
+            '${account.firstName} ${account.lastName}',
             style: const TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,

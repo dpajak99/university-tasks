@@ -2,6 +2,7 @@
 import 'package:projekt/config/locator.dart';
 import 'package:projekt/infra/dto/chat/chat_message.dart';
 import 'package:projekt/infra/dto/chat/chat_room.dart';
+import 'package:projekt/infra/dto/chat/count_messages_dto.dart';
 import 'package:projekt/infra/repositories/chat/chat_repository.dart';
 
 class ChatService {
@@ -23,6 +24,12 @@ class ChatService {
     List<dynamic> response = await chatRepository.fetchUserRooms();
     List<ChatRoom> rooms = response.map((dynamic e) => ChatRoom.fromJson(e as Map<String, dynamic>)).toList();
     return rooms;
+  }
+
+  Future<List<CountMessagesDto>> countMessages() async {
+    List<dynamic> response = await chatRepository.fetchCountMessages();
+    List<CountMessagesDto> countMessages = response.map((dynamic e) => CountMessagesDto.fromJson(e as Map<String, dynamic>)).toList();
+    return countMessages;
   }
 
   Future<ChatRoom> getRoomDetails({required String roomId}) async {

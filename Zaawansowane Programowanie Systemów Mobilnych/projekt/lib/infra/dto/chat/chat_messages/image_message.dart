@@ -111,5 +111,5 @@ class ImageMessage extends ChatMessage {
 
   final FileResponse fileResponse;
 
-  String get url => '${ApiManager.networkUrl}/drive/files/${fileResponse.id}';
+  String get url => '${ApiManager.networkUrl}/drive/uploads/${fileResponse.id}';
 }

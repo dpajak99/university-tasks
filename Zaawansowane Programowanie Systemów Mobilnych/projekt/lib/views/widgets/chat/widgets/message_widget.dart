@@ -149,7 +149,7 @@ class MessageWidget extends StatelessWidget {
               .userAvatarImageBackgroundColor
               : color,
           backgroundImage:
-          hasImage ? NetworkImage(message.author.getAvatarUrl()!) : null,
+          hasImage ? NetworkImage(message.author.getAvatarUrl()) : null,
           radius: 16,
           child: !hasImage
               ? Text(

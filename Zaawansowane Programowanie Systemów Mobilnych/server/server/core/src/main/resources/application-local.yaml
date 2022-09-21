@@ -1,0 +1,42 @@
+server:
+  port: 8082
+
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/hacknarok-local
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+    testWhileIdle: true
+    validationQuery: SELECT 1
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: hacknarok
+#      username: tarbuslocal
+#      password: 8399
+      authentication-database: admin
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyHbmImpl
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL92Dialect
+        temp:
+          use_jdbc_metadata_defaults: false
+tarbus:
+  app:
+    url: http://localhost:8082
+    jwtSecret: bezKoderSecretKey
+    jwtExpirationMs: 86400000
+    storage-relative-path: ../static
+    storage-absolute-path: /media/dominik/dane/github/hacknarok/static

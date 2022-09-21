@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:projekt/blocs/specifics_blocs/chat_cubit/chat_cubit.dart';
 import 'package:projekt/blocs/specifics_blocs/chat_messages_cubit/chat_messages_cubit.dart';
 import 'package:projekt/blocs/specifics_blocs/chat_rooms_cubit/chat_rooms_cubit.dart';
+import 'package:projekt/blocs/specifics_blocs/friends_cubit/friends_cubit.dart';
 import 'package:projekt/blocs/specifics_blocs/search_cubit/search_cubit.dart';
 import 'package:projekt/blocs/specifics_blocs/websocket_listener_cubit/websocket_listener_cubit.dart';
 import 'package:projekt/config/locator.dart';
@@ -39,6 +40,13 @@ List<SingleChildWidget> appListProviders = <SingleChildWidget>[
     lazy: false,
     create: (BuildContext context) => SearchCubit(
       usersService: globalLocator<UsersService>(),
+      accountProvider: globalLocator<AccountProvider>(),
+    ),
+  ),
+  BlocProvider<FriendsCubit>(
+    lazy: false,
+    create: (BuildContext context) => FriendsCubit(
+      chatService: globalLocator<ChatService>(),
       accountProvider: globalLocator<AccountProvider>(),
     ),
   ),

@@ -17,6 +17,7 @@ import 'package:projekt/providers/account_provider.dart';
 import 'package:projekt/shared/utils/file_uploader.dart';
 import 'package:projekt/views/widgets/center_load_spinner.dart';
 import 'package:projekt/views/widgets/chat/chat_app_bar.dart';
+import 'package:projekt/views/widgets/chat/chat_avatar.dart';
 import 'package:projekt/views/widgets/chat/model/send_button_visibility_mode.dart';
 import 'package:projekt/views/widgets/chat/widgets/chat.dart';
 import 'package:uuid/uuid.dart';
@@ -46,6 +47,9 @@ class _ChatMessagesPage extends State<ChatMessagesPage> {
       appBar: ChatAppBar(
         chatRoom: widget.chatRoom,
       ),
+      endDrawer: _ChatDrawer(
+        chatRoom: widget.chatRoom,
+      ),
       body: BlocBuilder<ChatMessagesCubit, ChatMessagesState>(
         builder: (BuildContext context, ChatMessagesState state) {
           if (state is MessagesLoaded) {
@@ -68,8 +72,7 @@ class _ChatMessagesPage extends State<ChatMessagesPage> {
   }
 
   Future<void> _handleMessageTap(BuildContext context, ChatMessage message) async {
-    if (message is FileMessage) {
-    }
+    if (message is FileMessage) {}
   }
 
   void _handlePreviewDataFetched(TextMessage message, PreviewData previewData) {
@@ -175,5 +178,72 @@ class _ChatMessagesPage extends State<ChatMessagesPage> {
       metadata: const <String, dynamic>{},
     );
     BlocProvider.of<ChatCubit>(context).sendMessage(message);
+  }
+}
+
+class _ChatDrawer extends StatelessWidget {
+  final ChatRoom chatRoom;
+
+  const _ChatDrawer({
+    required this.chatRoom,
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: MediaQuery.of(context).size.width * 0.90,
+      child: Drawer(
+        child: Column(
+          children: [
+            const SizedBox(height: 25),
+            ChatAvatar(
+              chatRoom: chatRoom,
+              size: 100,
+            ),
+            const SizedBox(height: 15),
+            Text(chatRoom.getName()),
+            const SizedBox(height: 15),
+            ListTile(
+              onTap: () {
+              },
+              title: const Text('zmień nazwe chatu'),
+              leading: const Icon(Icons.edit),
+            ),
+            ListTile(
+              onTap: () {
+              },
+              title: const Text('zmień zdjęcie'),
+              leading: const Icon(Icons.photo),
+            ),
+            ListTile(
+              onTap: () {
+              },
+              title: const Text('wyszukaj w konwersacji'),
+              leading: const Icon(Icons.search),
+            ),
+            ListTile(
+              onTap: () {
+              },
+              title: const Text('edytuj nicki'),
+              leading: const Icon(Icons.person),
+            ),
+            const Divider(),
+            ListTile(
+              onTap: () {
+              },
+              title: const Text('multimedia'),
+              leading: const Icon(Icons.perm_media_outlined),
+            ),
+            ListTile(
+              onTap: () {
+              },
+              title: const Text('pliki'),
+              leading: const Icon(Icons.file_copy_outlined),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

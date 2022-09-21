@@ -39,11 +39,13 @@ class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
             ),
             const SizedBox(width: 15),
             Text(
-              chatRoom.name ?? chatRoom.users.map((e) => e.firstName).join(', '),
+              chatRoom.getName(),
             ),
             const Spacer(),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Scaffold.of(context).openEndDrawer();
+              },
               icon: const Icon(Icons.info_outline),
             ),
           ],

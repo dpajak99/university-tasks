@@ -15,7 +15,9 @@ PublicUserData _$PublicUserDataFromJson(Map<String, dynamic> json) =>
           .map((e) => Role.fromJson(e as Map<String, dynamic>))
           .toList(),
       id: json['id'] as String,
-      avatarId: json['avatarId'] as String?,
+      avatar: json['avatar'] == null
+          ? null
+          : FileResponse.fromJson(json['avatar'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$PublicUserDataToJson(PublicUserData instance) =>
@@ -24,6 +26,6 @@ Map<String, dynamic> _$PublicUserDataToJson(PublicUserData instance) =>
       'firstName': instance.firstName,
       'lastName': instance.lastName,
       'email': instance.email,
-      'avatarId': instance.avatarId,
+      'avatar': instance.avatar?.toJson(),
       'roles': instance.roles.map((e) => e.toJson()).toList(),
     };

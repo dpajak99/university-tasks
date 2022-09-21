@@ -100,18 +100,19 @@ abstract class ChatMessage extends Equatable {
     return author.id == globalLocator<AccountProvider>().account!.id;
   }
 
-  String? getLastMessageText() {
+  String getLastMessageText() {
+    String prefix = isMe ? 'Ty: ' : '';
     switch (type) {
       case MessageType.custom:
         return (this as CustomMessage).id;
       case MessageType.file:
-        return 'Wysłano plik';
+        return '${prefix}Wysłano plik';
       case MessageType.image:
-        return 'Wysłano zdjęcie';
+        return '${prefix}Wysłano zdjęcie';
       case MessageType.text:
-        return (this as TextMessage).text;
+        return '$prefix${(this as TextMessage).text}';
       default:
-        return 'Unsupported message';
+        return '${prefix}Unsupported message';
     }
   }
 

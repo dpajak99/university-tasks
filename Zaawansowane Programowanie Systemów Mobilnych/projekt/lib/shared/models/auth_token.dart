@@ -24,4 +24,8 @@ class AuthToken {
     return publicUserDataJson;
   }
 
+  @override
+  String toString() {
+    return 'AuthToken{token: $token, type: $type}';
+  }
 }

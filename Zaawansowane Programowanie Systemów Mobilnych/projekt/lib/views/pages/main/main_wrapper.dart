@@ -33,6 +33,18 @@ class _MainWrapper extends State<MainWrapper> {
   }
 
   @override
+  void didUpdateWidget(covariant MainWrapper oldWidget) {
+    print('need to update');
+
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+  }
+
+  @override
   Widget build(BuildContext context) {
     // BlocProvider.of<ChatCubit>(context).refresh();
     return AutoTabsScaffold(
@@ -58,7 +70,7 @@ class _BottomBarNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
+    Account? account = globalLocator<AccountProvider>().account;
     return Container(
       color: const Color(0xFFF1F5FB),
       child: SalomonBottomBar(
@@ -89,7 +101,9 @@ class _BottomBarNavigation extends StatelessWidget {
           ),
           SalomonBottomBarItem(
             selectedColor: Colors.pinkAccent[100],
-            icon: const ProfileAvatar(),
+            icon: ProfileAvatar(
+              avatarId: account?.avatar?.id,
+            ),
             title: const Text('Profile'),
           ),
         ],

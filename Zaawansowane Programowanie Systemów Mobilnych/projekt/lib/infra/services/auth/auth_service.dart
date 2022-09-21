@@ -19,7 +19,7 @@ class AuthService {
       ),
     ));
 
-    globalLocator<AccountProvider>().updateAccount(account);
+    await globalLocator<AccountProvider>().updateAccount(account);
     return account;
   }
 

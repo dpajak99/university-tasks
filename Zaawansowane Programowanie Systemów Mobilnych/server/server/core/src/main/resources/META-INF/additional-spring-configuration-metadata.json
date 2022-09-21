@@ -1,0 +1,28 @@
+{
+  "properties": [
+    {
+      "name": "tarbus.app.jwtSecret",
+      "type": "java.lang.String",
+      "description": "Description for tarbus.app.jwtSecret."
+    },
+    {
+      "name": "tarbus.app.url",
+      "type": "java.lang.String",
+      "description": "Description for tarbus.app.url."
+    },
+    {
+      "name": "tarbus.app.jwtExpirationMs",
+      "type": "java.lang.String",
+      "description": "Description for tarbus.app.jwtExpirationMs."
+    },
+    {
+      "name": "tarbus.app.storage-relative-path",
+      "type": "java.lang.String",
+      "description": "Description for tarbus.app.storage-relative-path."
+    },
+    {
+      "name": "tarbus.app.storage-absolute-path",
+      "type": "java.lang.String",
+      "description": "Description for tarbus.app.storage-absolute-path."
+    }
+  ] }

@@ -10,7 +10,16 @@ abstract class ChatRoomsState extends Equatable {
 class RoomsLoading extends ChatRoomsState {}
 
 class RoomsLoaded extends ChatRoomsState {
-  final List<ChatRoom> rooms;
+  final List<ChatRoom> _rooms;
 
-  const RoomsLoaded({required this.rooms});
+  List<ChatRoom> get rooms {
+    _rooms.sort((ChatRoom a, ChatRoom b) => b.updatedAt.compareTo(a.updatedAt));
+    return _rooms;
+  }
+
+  @override
+  List<Object> get props => <Object>[_rooms.hashCode];
+
+  const RoomsLoaded({required List<ChatRoom> rooms}) : _rooms = rooms;
+
 }

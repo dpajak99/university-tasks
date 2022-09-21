@@ -19,13 +19,15 @@ class ChatSocket {
 
   Future<void> _onConnect(StompFrame frame, MessageReceivedCallback onMessageReceived) async {
     print('Connected to websocket');
-    String userId = globalLocator<AccountProvider>().account!.id;
-    websocket.subscribe(
-      destination: '/user/$userId/queue/messages',
-      callback: (StompFrame frame) {
-        onMessageReceived(frame);
-      },
-    );
+    if( globalLocator<AccountProvider>().isLoggedIn ) {
+      String userId = globalLocator<AccountProvider>().account!.id;
+      websocket.subscribe(
+        destination: '/user/$userId/queue/messages',
+        callback: (StompFrame frame) {
+          onMessageReceived(frame);
+        },
+      );
+    }
   }
 
   Future<void> sendMessage(Map<String, dynamic> chatMessage) async {

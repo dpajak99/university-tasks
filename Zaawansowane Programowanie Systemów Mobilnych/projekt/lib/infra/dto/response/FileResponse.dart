@@ -1,3 +1,10 @@
+import 'package:flutter/cupertino.dart';
+import 'package:json_annotation/json_annotation.dart';
+
+part 'FileResponse.g.dart';
+
+@JsonSerializable(explicitToJson: true)
+@immutable
 class FileResponse {
   final String id;
   final String name;
@@ -5,7 +12,7 @@ class FileResponse {
   final int timestamp;
   final int size;
 
-  FileResponse({
+  const FileResponse({
     required this.id,
     required this.name,
     required this.extension,
@@ -19,4 +26,16 @@ class FileResponse {
     extension: json["extension"],
     timestamp: json["timestamp"],
   );
+
+  Map<String, dynamic> toJson() => {
+    "id": id,
+    "name": name,
+    "extension": extension,
+    "timestamp": timestamp,
+  };
+
+  @override
+  String toString() {
+    return 'FileResponse{id: $id, name: $name, extension: $extension, timestamp: $timestamp, size: $size}';
+  }
 }

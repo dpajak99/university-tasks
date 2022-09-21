@@ -15,7 +15,9 @@ Account _$AccountFromJson(Map<String, dynamic> json) => Account(
       roles: (json['roles'] as List<dynamic>)
           .map((e) => Role.fromJson(e as Map<String, dynamic>))
           .toList(),
-      avatarId: json['avatarId'] as String?,
+      avatar: json['avatar'] == null
+          ? null
+          : FileResponse.fromJson(json['avatar'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AccountToJson(Account instance) => <String, dynamic>{
@@ -23,7 +25,7 @@ Map<String, dynamic> _$AccountToJson(Account instance) => <String, dynamic>{
       'email': instance.email,
       'firstName': instance.firstName,
       'lastName': instance.lastName,
-      'avatarId': instance.avatarId,
+      'avatar': instance.avatar?.toJson(),
       'token': instance.token.toJson(),
       'roles': instance.roles.map((e) => e.toJson()).toList(),
     };

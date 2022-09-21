@@ -1,7 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
+import 'package:projekt/blocs/specifics_blocs/chat_cubit/chat_cubit.dart';
 import 'package:projekt/blocs/specifics_blocs/chat_rooms_cubit/chat_rooms_cubit.dart';
+import 'package:projekt/blocs/specifics_blocs/websocket_listener_cubit/websocket_listener_cubit.dart';
 import 'package:projekt/infra/dto/chat/chat_room.dart';
 import 'package:projekt/shared/router/router.gr.dart';
 import 'package:projekt/views/widgets/center_load_spinner.dart';
@@ -62,6 +65,7 @@ class _ChatRoomsPage extends State<ChatRoomsPage> {
           BlocBuilder<ChatRoomsCubit, ChatRoomsState>(
             builder: (BuildContext context, ChatRoomsState state) {
               if (state is RoomsLoaded) {
+                print(state.rooms.length);
                 return ListView.builder(
                   shrinkWrap: true,
                   itemCount: state.rooms.length,
@@ -111,13 +115,17 @@ class _ChatRoomListItem extends StatelessWidget {
             Expanded(
               child: ListTile(
                 title: Text(
-                  room.name ?? room.users.map((e) => e.firstName).join(', '),
+                  room.getName(),
                   overflow: TextOverflow.ellipsis,
                 ),
                 subtitle: Text(room.lastChatMessage?.getLastMessageText() ?? 'Brak wiadomości',
                     overflow: TextOverflow.ellipsis),
               ),
             ),
+            SizedBox(
+              width: 50,
+              child: Text(DateFormat("dd.MM").format(DateTime.fromMillisecondsSinceEpoch(room.updatedAt))),
+            )
           ],
         ),
       ),

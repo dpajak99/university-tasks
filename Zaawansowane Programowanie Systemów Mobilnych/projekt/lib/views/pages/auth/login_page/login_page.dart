@@ -1,8 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:projekt/blocs/specifics_blocs/chat_cubit/chat_cubit.dart';
+import 'package:projekt/blocs/specifics_blocs/websocket_listener_cubit/websocket_listener_cubit.dart';
 import 'package:projekt/config/design_colors.dart';
 import 'package:projekt/config/locator.dart';
 import 'package:projekt/infra/services/auth/auth_service.dart';
+import 'package:projekt/providers/account_provider.dart';
+import 'package:projekt/shared/models/account.dart';
 import 'package:projekt/shared/router/router.gr.dart';
 import 'package:projekt/views/widgets/buttons/custom_elevated_button.dart';
 import 'package:projekt/views/widgets/buttons/custom_outlined_button.dart';
@@ -71,7 +76,9 @@ class _LoginPage extends State<LoginPage> {
 
   Future<void> _onLoginPressed() async {
     try {
-      await globalLocator<AuthService>().login(emailTextController.text, passwordTextController.text);
+      Account account = await globalLocator<AuthService>().login(emailTextController.text, passwordTextController.text);
+      BlocProvider.of<WebsocketListenerCubit>(context).init();
+      BlocProvider.of<ChatCubit>(context).init();
       AutoRouter.of(context).navigate(const MainWrapperRoute(
         children: <PageRouteInfo>[
           ChatRoomsRoute(),

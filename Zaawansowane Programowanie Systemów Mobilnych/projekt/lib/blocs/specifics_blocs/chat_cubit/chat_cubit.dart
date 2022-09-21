@@ -36,6 +36,11 @@ class ChatCubit extends Cubit<ChatState> {
     globalLocator<AccountProvider>().addListener(refresh);
   }
 
+  void logout() {
+    globalLocator<AccountProvider>().removeListener(refresh);
+    emit(ChatLoading());
+  }
+
   Future<void> refresh() async {
     List<ChatRoom> chatRooms = await chatRoomsCubit.initChatRooms();
 
